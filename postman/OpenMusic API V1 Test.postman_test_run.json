@@ -1,0 +1,644 @@
+{
+	"id": "ac37372e-57b6-4cd4-8f4e-b329488d0a6c",
+	"name": "OpenMusic API V1 Test",
+	"timestamp": "2021-06-23T12:29:12.029Z",
+	"collection_id": "160aa574-af65-4031-8ed2-8ca5eb650a91",
+	"folder_id": 0,
+	"environment_id": "b9dfb39f-452a-4d8d-a58b-83f2330281bf",
+	"totalPass": 89,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "e3b68796-4b48-412b-9237-6706388f23a5",
+			"name": "Adding Song with Valid Payload",
+			"url": "http://localhost:5000/songs",
+			"time": 680,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"status response should be 201": true,
+				"response Content-Type should application/json": true,
+				"response body should contains correct value": true,
+				"response body data should contains songId": true
+			},
+			"testPassFailCounts": {
+				"status response should be 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type should application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should contains correct value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body data should contains songId": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				680
+			],
+			"allTests": [
+				{
+					"status response should be 201": true,
+					"response Content-Type should application/json": true,
+					"response body should contains correct value": true,
+					"response body data should contains songId": true
+				}
+			]
+		},
+		{
+			"id": "1038f2bf-7f27-46fa-97e9-f941cebd3d81",
+			"name": "Adding Song with Bad Payload",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response status code should have 400 value": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body should have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"response status code should have 400 value": {
+					"pass": 7,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 7,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 7,
+					"fail": 0
+				},
+				"response body should have correct property and value": {
+					"pass": 7,
+					"fail": 0
+				}
+			},
+			"times": [
+				7,
+				5,
+				4,
+				5,
+				6,
+				5,
+				5
+			],
+			"allTests": [
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "c0fe4e42-bda2-4ed7-9c79-5c7566248520",
+			"name": "Getting All Songs",
+			"url": "http://localhost:5000/songs",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response status code should 200": true,
+				"response Content-Type should application/json": true,
+				"response body shoud contains correct value": true,
+				"response body data should contains array songs and have only 1 item": true,
+				"the array songs should contain object with only 3 property (id, title, performer)": true
+			},
+			"testPassFailCounts": {
+				"response status code should 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type should application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body shoud contains correct value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body data should contains array songs and have only 1 item": {
+					"pass": 1,
+					"fail": 0
+				},
+				"the array songs should contain object with only 3 property (id, title, performer)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"response status code should 200": true,
+					"response Content-Type should application/json": true,
+					"response body shoud contains correct value": true,
+					"response body data should contains array songs and have only 1 item": true,
+					"the array songs should contain object with only 3 property (id, title, performer)": true
+				}
+			]
+		},
+		{
+			"id": "481df8de-2be0-40fd-a2f5-6b5b082ed8a6",
+			"name": "Getting Specified Song",
+			"url": "http://localhost:5000/songs/song-U5GnOT55njAsxODF",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response status code should 200": true,
+				"response Content-Type should application/json": true,
+				"response body shoud contains correct value": true,
+				"response body data shoud contains song object": true,
+				"song object should contains correct value": true
+			},
+			"testPassFailCounts": {
+				"response status code should 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type should application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body shoud contains correct value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body data shoud contains song object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"song object should contains correct value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"response status code should 200": true,
+					"response Content-Type should application/json": true,
+					"response body shoud contains correct value": true,
+					"response body data shoud contains song object": true,
+					"song object should contains correct value": true
+				}
+			]
+		},
+		{
+			"id": "14e866ae-a0f8-4d98-8ce1-7a4cf2edf4ac",
+			"name": "Getting Specified Song with Bad songId",
+			"url": "http://localhost:5000/songs/xxxx",
+			"time": 5,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"response status code should 404": true,
+				"response Content-Type should application/json": true,
+				"response body shoud contains correct value": true
+			},
+			"testPassFailCounts": {
+				"response status code should 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type should application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body shoud contains correct value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"response status code should 404": true,
+					"response Content-Type should application/json": true,
+					"response body shoud contains correct value": true
+				}
+			]
+		},
+		{
+			"id": "c4c6ac7a-2353-4bb6-a923-24cd88d96345",
+			"name": "Update Song with Valid Payload",
+			"url": "http://localhost:5000/songs/song-U5GnOT55njAsxODF",
+			"time": 28,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response status should be 200": true,
+				"response Content-Type should application/json": true,
+				"response body shoud contains correct value": true,
+				"when requesting the updated song": true,
+				"the song should be updated": true
+			},
+			"testPassFailCounts": {
+				"response status should be 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type should application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body shoud contains correct value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"when requesting the updated song": {
+					"pass": 1,
+					"fail": 0
+				},
+				"the song should be updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				28
+			],
+			"allTests": [
+				{
+					"response status should be 200": true,
+					"response Content-Type should application/json": true,
+					"response body shoud contains correct value": true,
+					"when requesting the updated song": true,
+					"the song should be updated": true
+				}
+			]
+		},
+		{
+			"id": "7991f236-59a0-4e85-8b15-d7fda5f710f1",
+			"name": "Update Song with Bad songId",
+			"url": "http://localhost:5000/songs/xxxx",
+			"time": 6,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"response status code should 404": true,
+				"response Content-Type should application/json": true,
+				"response body shoud contains correct value": true
+			},
+			"testPassFailCounts": {
+				"response status code should 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type should application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body shoud contains correct value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"response status code should 404": true,
+					"response Content-Type should application/json": true,
+					"response body shoud contains correct value": true
+				}
+			]
+		},
+		{
+			"id": "34af9deb-73f4-4547-a3e4-24ad4ec7f5fa",
+			"name": "Update Song with Bad Payload",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response status code should have 400 value": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body should have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"response status code should have 400 value": {
+					"pass": 7,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 7,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 7,
+					"fail": 0
+				},
+				"response body should have correct property and value": {
+					"pass": 7,
+					"fail": 0
+				}
+			},
+			"times": [
+				4,
+				5,
+				4,
+				5,
+				5,
+				5,
+				4
+			],
+			"allTests": [
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				},
+				{
+					"response status code should have 400 value": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body should have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "7767c771-9fc9-4056-976e-557bed02a63b",
+			"name": "Delete Song with Valid Payload",
+			"url": "http://localhost:5000/songs/song-U5GnOT55njAsxODF",
+			"time": 64,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response status should be 200": true,
+				"response Content-Type should application/json": true,
+				"response body shoud contains correct value": true,
+				"when requesting the deleted songs": true,
+				"the song should be updated": true
+			},
+			"testPassFailCounts": {
+				"response status should be 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type should application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body shoud contains correct value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"when requesting the deleted songs": {
+					"pass": 1,
+					"fail": 0
+				},
+				"the song should be updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				64
+			],
+			"allTests": [
+				{
+					"response status should be 200": true,
+					"response Content-Type should application/json": true,
+					"response body shoud contains correct value": true,
+					"when requesting the deleted songs": true,
+					"the song should be updated": true
+				}
+			]
+		},
+		{
+			"id": "3f99d7ef-1998-449f-b621-b9950a75c8f4",
+			"name": "Delete Song with Bad songId",
+			"url": "http://localhost:5000/songs/xxxx",
+			"time": 5,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"response status code should 404": true,
+				"response Content-Type should application/json": true,
+				"response body shoud contains correct value": true
+			},
+			"testPassFailCounts": {
+				"response status code should 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type should application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body shoud contains correct value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"response status code should 404": true,
+					"response Content-Type should application/json": true,
+					"response body shoud contains correct value": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 870,
+	"collection": {
+		"requests": [
+			{
+				"id": "e3b68796-4b48-412b-9237-6706388f23a5",
+				"method": "POST"
+			},
+			{
+				"id": "1038f2bf-7f27-46fa-97e9-f941cebd3d81",
+				"method": "POST"
+			},
+			{
+				"id": "1038f2bf-7f27-46fa-97e9-f941cebd3d81",
+				"method": "POST"
+			},
+			{
+				"id": "1038f2bf-7f27-46fa-97e9-f941cebd3d81",
+				"method": "POST"
+			},
+			{
+				"id": "1038f2bf-7f27-46fa-97e9-f941cebd3d81",
+				"method": "POST"
+			},
+			{
+				"id": "1038f2bf-7f27-46fa-97e9-f941cebd3d81",
+				"method": "POST"
+			},
+			{
+				"id": "1038f2bf-7f27-46fa-97e9-f941cebd3d81",
+				"method": "POST"
+			},
+			{
+				"id": "1038f2bf-7f27-46fa-97e9-f941cebd3d81",
+				"method": "POST"
+			},
+			{
+				"id": "c0fe4e42-bda2-4ed7-9c79-5c7566248520",
+				"method": "GET"
+			},
+			{
+				"id": "481df8de-2be0-40fd-a2f5-6b5b082ed8a6",
+				"method": "GET"
+			},
+			{
+				"id": "14e866ae-a0f8-4d98-8ce1-7a4cf2edf4ac",
+				"method": "GET"
+			},
+			{
+				"id": "c4c6ac7a-2353-4bb6-a923-24cd88d96345",
+				"method": "PUT"
+			},
+			{
+				"id": "7991f236-59a0-4e85-8b15-d7fda5f710f1",
+				"method": "PUT"
+			},
+			{
+				"id": "34af9deb-73f4-4547-a3e4-24ad4ec7f5fa",
+				"method": "PUT"
+			},
+			{
+				"id": "34af9deb-73f4-4547-a3e4-24ad4ec7f5fa",
+				"method": "PUT"
+			},
+			{
+				"id": "34af9deb-73f4-4547-a3e4-24ad4ec7f5fa",
+				"method": "PUT"
+			},
+			{
+				"id": "34af9deb-73f4-4547-a3e4-24ad4ec7f5fa",
+				"method": "PUT"
+			},
+			{
+				"id": "34af9deb-73f4-4547-a3e4-24ad4ec7f5fa",
+				"method": "PUT"
+			},
+			{
+				"id": "34af9deb-73f4-4547-a3e4-24ad4ec7f5fa",
+				"method": "PUT"
+			},
+			{
+				"id": "34af9deb-73f4-4547-a3e4-24ad4ec7f5fa",
+				"method": "PUT"
+			},
+			{
+				"id": "7767c771-9fc9-4056-976e-557bed02a63b",
+				"method": "DELETE"
+			},
+			{
+				"id": "3f99d7ef-1998-449f-b621-b9950a75c8f4",
+				"method": "DELETE"
+			}
+		]
+	}
+}
